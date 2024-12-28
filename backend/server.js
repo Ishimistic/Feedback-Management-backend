@@ -17,9 +17,10 @@ console.log("Environ: ", process.PORT);
 
 connectDB();
 
+app.use(cors({ origin: 'http://localhost:3000', credentials:true}));
 
 app.use(bodyParser.json());
-app.use(cors());
+// app.use(cors());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/feedback", feedbackRoutes);
